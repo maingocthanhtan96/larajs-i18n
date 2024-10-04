@@ -1,8 +1,9 @@
 <?php namespace LaraJS\I18n;
 
 use Illuminate\Support\ServiceProvider;
+use LaraJS\I18n\Commands\GenerateInclude;
 
-class GeneratorProvider extends ServiceProvider
+class LaraJSI18nProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -18,21 +19,23 @@ class GeneratorProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton('vue-i18n.generate', function () {
+        $this->app->singleton('larajs.i18n', function () {
             return new Commands\GenerateInclude;
         });
 
-        $this->commands(
-            'vue-i18n.generate'
-        );
+        $this->commands('larajs.i18n');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([GenerateInclude::class]);
+        }
 
         $this->publishes([
-            __DIR__.'/config/vue-i18n-generator.php' => config_path('vue-i18n-generator.php'),
-        ]);
+            __DIR__ . '/../config/i18n.php' => config_path('i18n.php'),
+        ], 'larajs-i18n');
 
          $this->mergeConfigFrom(
-            __DIR__.'/config/vue-i18n-generator.php',
-            'vue-i18n-generator'
+             __DIR__ . '/../config/i18n.php',
+            'i18n'
         );
     }
 
@@ -43,15 +46,5 @@ class GeneratorProvider extends ServiceProvider
      */
     public function register()
     {
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['vue-i18n-generator'];
     }
 }

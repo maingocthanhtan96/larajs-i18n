@@ -1,6 +1,6 @@
 {
   "name": "larajs/i18n",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "Generates a vue-i18n compatible include file from your Laravel translations.",
   "keywords": [
@@ -31,7 +31,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "LaraJS\\I18n\\GeneratorProvider"
+        "LaraJS\\I18n\\LaraJSI18nProvider"
       ]
     }
   }
