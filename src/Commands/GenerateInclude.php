@@ -18,7 +18,7 @@ class GenerateInclude extends Command
      *
      * @var string
      */
-    protected $description = "Generates a vue-i18n|vuex-i18n compatible js array out of project translations";
+    protected $description = "Generates a i18n compatible js array out of project translations";
 
     /**
      * Execute the console command.
@@ -27,8 +27,8 @@ class GenerateInclude extends Command
      */
     public function handle()
     {
-        $root = base_path() . config('vue-i18n-generator.langPath');
-        $config = config('vue-i18n-generator');
+        $root = base_path() . config('i18n-generator.langPath');
+        $config = config('i18n-generator');
 
         // options
         $umd = $this->option('umd');
@@ -85,7 +85,7 @@ class GenerateInclude extends Command
             return base_path() . $fileNameOption;
         }
 
-        return base_path() . config('vue-i18n-generator.jsFile');
+        return base_path() . config('i18n-generator.jsFile');
     }
 
     /**
