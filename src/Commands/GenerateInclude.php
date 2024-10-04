@@ -11,7 +11,7 @@ class GenerateInclude extends Command
      *
      * @var string
      */
-    protected $signature = 'vue-i18n:generate {--umd} {--multi} {--with-vendor} {--file-name=} {--lang-files=} {--format=json} {--multi-locales}';
+    protected $signature = 'larajs:i18n {--umd} {--multi} {--with-vendor} {--file-name=} {--lang-files=} {--format=json} {--multi-locales}';
 
     /**
      * The console command description.
