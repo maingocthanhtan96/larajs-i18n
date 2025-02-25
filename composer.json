@@ -1,6 +1,6 @@
 {
   "name": "larajs/i18n",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "description": "Generates a vue-i18n compatible include file from your Laravel translations.",
   "keywords": [
@@ -17,8 +17,8 @@
     "php": "^7.4|^8.0|^8.1",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "illuminate/console": "~8.0|~9.0|~10.0|~11.0",
-    "illuminate/support": "~8.0|~9.0|~10.0|~11.0"
+    "illuminate/console": "~8.0|~9.0|~10.0|~11.0|~12.0",
+    "illuminate/support": "~8.0|~9.0|~10.0|~11.0|~12.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~9.0"
